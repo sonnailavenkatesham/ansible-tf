@@ -23,7 +23,7 @@
 - name: copying cotalogue.js
   ansible.builtin.copy:
     src: catalogue.js
-    dest: /tmp
+    dest: /tmp/
 
 - name: loading catlogue.js
   ansible.builtin.shell: mongo --host mongodb.venkateshamsonnalia143.online </tmp/catalogue.js
