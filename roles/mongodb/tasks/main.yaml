@@ -1,4 +1,4 @@
-- name: copty mongo repo
+- name: copying mongo repo
   ansible.builtin.copy:
     src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
@@ -24,7 +24,7 @@
   ansible.builtin.copy:
     src: catalogue.js
     dest: /tmp
-    
+
 - name: loading catlogue.js
   ansible.builtin.shell: mongo --host mongodb.venkateshamsonnalia143.online </tmp/catalogue.js
 
