@@ -20,13 +20,18 @@
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
+- name: createing app directory
+  ansible.builtin.file:
+    path: /app
+    state: directory
+
 - name: copying cotalogue.js
   ansible.builtin.copy:
     src: catalogue.js
-    dest: /tmp/
+    dest: /app
 
 - name: loading catlogue.js
-  ansible.builtin.shell: mongo --host mongodb.venkateshamsonnalia143.online </tmp/catalogue.js
+  ansible.builtin.shell: mongo --host mongodb.venkateshamsonnalia143.online < /app/catalogue.js
 
 - name: restarting mongodb
   ansible.builtin.service:
