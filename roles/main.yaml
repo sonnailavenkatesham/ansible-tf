@@ -1,0 +1,8 @@
+- name: creating roboshop project
+  hosts: {{ietem}}
+  become: yes
+  roles: 
+  loop:
+  - mongodb
+  - catalogue
+  - web

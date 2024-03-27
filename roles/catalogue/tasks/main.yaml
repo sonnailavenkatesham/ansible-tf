@@ -1,0 +1,27 @@
+- name: Stalling and setup Nodejs
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: nodejs
+
+- name: downling artifact
+  ansible.builtin.unarchive:
+    src: https://roboshop-builds.s3.amazonaws.com/catalogue.zip
+    dest: /app
+    remote_src: yes
+
+- name: npm install 
+  ansible.builtin.shell: npm install 
+  args:
+    chdir: /app
+
+- name: coping catalogue service
+  ansible.builtin.copy:
+    src: catalogue.service
+    dest: /etc/systemd/system/catalogue.service
+
+- name: daemon-reload
+  ansible.builtin.systemd_service:
+    name: catalogue
+    daemon_reload: true
+    enabled: yes
+    state: restarted
