@@ -1,5 +1,5 @@
 - name: creating roboshop project
-  hosts: {{ietem}}
+  hosts: "{{ietem}}"
   become: yes
   roles: 
   loop:
