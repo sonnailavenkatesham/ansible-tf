@@ -1,7 +1,10 @@
 - name: creating roboshop project
-  hosts: "{{item}}"
+  hosts: "{{ item }}"
   become: yes
-  roles: 
+  loop:
   - mongodb
   - catalogue
   - web
+  roles: 
+  - "{{ item }}"
+  
