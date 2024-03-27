@@ -31,7 +31,7 @@
     dest: /app
 
 - name: loading catlogue.js
-  ansible.builtin.shell: mongo --host mongodb.venkateshamsonnalia143.online < /app/catalogue.js
+  ansible.builtin.shell: mongo --host localhost < /app/catalogue.js
 
 - name: restarting mongodb
   ansible.builtin.service:
