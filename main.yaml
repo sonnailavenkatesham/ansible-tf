@@ -1,6 +1,6 @@
 - name: creating roboshop project
-  hosts: "{{ component }}"
+  hosts: '{{ component }}'
   become: yes
   roles: 
-  - "{{ component }}"
+  - '{{ component }}'
   
