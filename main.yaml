@@ -1,5 +1,5 @@
 - name: creating roboshop project
-  hosts: "{{ietem}}"
+  hosts: "{{item}}"
   become: yes
   roles: 
   - mongodb
