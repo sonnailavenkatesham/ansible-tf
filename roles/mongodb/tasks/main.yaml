@@ -36,7 +36,7 @@
     dest: /app
 
 - name: loading schema
-  ansible.builtin.shell: mongo --host localhost < /app/*.js
+  ansible.builtin.shell: mongo --host localhost < /app/catalogue.js
 
 - name: restarting mongodb
   ansible.builtin.service:
