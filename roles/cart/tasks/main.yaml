@@ -7,6 +7,7 @@
     src: https://roboshop-builds.s3.amazonaws.com/cart.zip
     dest: /app
     remote_src: yes
+    
 - name: npm Installing
   ansible.builtin.shell: npm install
   args:
