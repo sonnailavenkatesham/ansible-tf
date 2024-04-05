@@ -35,10 +35,10 @@
     src: user.js
     dest: /app
 
-- name: loading schema
+- name: loading catalogue schema
   ansible.builtin.shell: mongo --host localhost < /app/catalogue.js
 
-- name: loading schema
+- name: loading user schema
   ansible.builtin.shell: mongo --host localhost < /app/user.js
 
 - name: restarting mongodb
