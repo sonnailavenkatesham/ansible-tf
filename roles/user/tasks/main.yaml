@@ -1,0 +1,22 @@
+- name: nodeJS set up and creating user and directory
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: nodejs
+
+- name: Downloading artifact 
+  ansible.builtin.archive:
+    src: https://roboshop-builds.s3.amazonaws.com/user.zip
+    dest: /app
+    remote_src: yes
+
+- name: npm install 
+  ansible.builtin.shell: npm install 
+  args:
+    chdir: /app
+
+- name: deamon reload
+  ansible.builtin.systemd_service:
+    daemon_reload: true
+    name: user
+    enabled: true
+    state: started
