@@ -20,5 +20,5 @@
 - name: enabling and starting cart service
   ansible.builtin.service:
     name: cart
-    enabled: yes
+    enabled: true
     state: started
