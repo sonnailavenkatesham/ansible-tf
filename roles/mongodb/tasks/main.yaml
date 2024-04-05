@@ -30,12 +30,12 @@
     src: catalogue.js
     dest: /app
 
-- name: copying cotalogue.js
+- name: copying user.js
   ansible.builtin.copy:
-    src: catalogue.js
+    src: user.js
     dest: /app
 
-- name: loading catlogue.js
+- name: loading schema
   ansible.builtin.shell: mongo --host localhost < /app/*.js
 
 - name: restarting mongodb
