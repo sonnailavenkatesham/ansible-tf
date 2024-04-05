@@ -38,6 +38,9 @@
 - name: loading schema
   ansible.builtin.shell: mongo --host localhost < /app/catalogue.js
 
+- name: loading schema
+  ansible.builtin.shell: mongo --host localhost < /app/user.js
+
 - name: restarting mongodb
   ansible.builtin.service:
     name: mongod
